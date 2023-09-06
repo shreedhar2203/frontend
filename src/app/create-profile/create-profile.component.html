@@ -1,0 +1,42 @@
+ <form class="form-container" [formGroup]="profileForm" (ngSubmit)="submitForm()" enctype="multipart/form-data">
+    <h2>Profile Input</h2>
+    <div>
+      <label for="username">username:</label>
+      <input type="text" id="username" formControlName="username" [value]="data" readonly>
+    </div>
+    <div>
+      <label for="DOB">Date of Birth:</label>
+      <input type="date" id="DOB" required formControlName="DOB">
+    </div>
+    <div>
+      <label for="location">Location:</label>
+      <input type="text" id="location" required  formControlName="location">
+    </div>
+    <div>
+      <label for="Profile_Image">Profile Image:</label>
+      <input type="file" id="Profile_Image" (change)="onProfileImageChange($event)" required >
+    </div>
+    <div>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" pattern="[0-9]{10}" required formControlName="phone">
+    </div>
+    <div>
+      <label>Gender:</label>
+      <span class="radio-label"><input type="radio"  value="male" required formControlName="gender"> Male</span>
+      <span class="radio-label"><input type="radio"  value="female" required formControlName="gender"> Female</span>
+    </div>
+    <div>
+      <label for="school">School:</label>
+      <input type="text" id="school"  required formControlName="school">
+    </div>
+    <div>
+      <label for="bio">Bio:</label>
+      <textarea id="bio"  rows="2" cols="30" formControlName="bio"></textarea>
+    </div>
+    <div>
+      <label for="interest">Interest:</label>
+      <input type="text" id="interest" formControlName="interest">
+    </div>
+    <button type="submit" >Submit</button>
+  </form>
+

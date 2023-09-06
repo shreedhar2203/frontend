@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+</div>
+<form method="post" class="login-form" (ngSubmit)="login(username.value, password.value)">
+    <h2>Login</h2>
+    <div class="container">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter Username" id="username" name="username" #username required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" id="password" name="password" #password required>
+        </div>
+        <button type="submit">Login</button>
+    </div>
+</form>

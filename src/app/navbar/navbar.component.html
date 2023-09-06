@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Social Media - Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #2880e0;
+            width: 100%;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: #e8e5e5;
+            text-decoration: none;
+            padding: 5px 16px;
+        }
+
+        .navbar a:hover {
+            background-color: #edecf1;
+            color: #555555;
+            border-radius: 5px;
+        }
+
+        .navbar a.active {
+            background-color: #007BFF;
+        }
+
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="navbar">
+        <a routerLink="/">Home</a>
+        <a routerLink="/profile">Profile</a>
+        <a routerLink="/signup">SignUp</a>
+        <a routerLink="/login">LogIn</a>
+    </div>
+</nav>
+</body>
+</html>

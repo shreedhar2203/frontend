@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+</div>
+<div class="signup-form">
+    <h2>Signup</h2>
+    <form [formGroup]="primEmail" (ngSubmit)="signup(username.value, email.value, password1.value, password2.value)">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" formControlName="username" #username required>
+        <label>Email:</label>
+        <input [class.is-invalid]="primEmail.controls['primaryEmail'].invalid && primEmail.controls['primaryEmail'].touched"
+               type="email" class="form-control" formControlName="primaryEmail" #email required>
+        <div *ngIf="primEmail.controls['primaryEmail'].invalid && (primEmail.controls['primaryEmail'].touched || primEmail.dirty)">
+            <small *ngIf="primEmail.controls['primaryEmail'].hasError('required')" class="text-danger">Primary email is
+                required</small>
+            <small *ngIf="primEmail.controls['primaryEmail'].hasError('pattern')" class="text-danger">Please provide a
+                valid email
+                address</small>
+        </div>
+        <label for="password1">Password:</label>
+        <input type="password" id="password1" name="password1" formControlName="password1" #password1 required>
+
+        <label for="password2">Confirm Password:</label>
+        <input type="password" id="password2" name="password2" formControlName="password2" #password2 required>
+
+        <button type="submit" [disabled]="primEmail.invalid">Signup</button>
+    </form>
+</div>

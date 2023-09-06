@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>User Profile</title>
+  <link rel="stylesheet" href="display-profile.component.css">
+</head>
+<body>
+<app-navbar></app-navbar>
+<h1>User Profile</h1>
+<div class="container">
+  <div class="left">
+    <img class="post-image" [src]="'http://127.0.0.1:9000' +user?.image" alt="Profile Image">
+    <p><strong>Username:</strong> {{ user?.username }}</p>
+    <p><strong>Date of Birth:</strong> {{ user?.dob }}</p>
+    <p><strong>Location:</strong> {{ user?.loc }}</p>
+    <p><strong>Phone Number:</strong> {{ user?.phone }}</p>
+    <p><strong>Gender:</strong> {{ user?.gender }}</p>
+    <p><strong>School:</strong> {{ user?.school }}</p>
+    <p><strong>Bio:</strong> {{ user?.bio }}</p>
+    <p><strong>Interests:</strong> {{ user?.interest }}</p>
+  </div>
+
+  <div class="right">
+    <!-- Content for the right section of the profile -->
+    <div *ngFor="let user of users">
+      <p>{{ user }}</p>
+    </div>
+  </div>
+</div>
+
+<form method="post">
+  <input type="submit" name="new_post" value="Start a New Post">
+</form>
+<form method="post">
+  <!-- Suggested users and other form content here -->
+</form>
+</body>
+</html>
